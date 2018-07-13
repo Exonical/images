@@ -6,7 +6,7 @@ RUN         apt update \
             && apt upgrade -y \
             && apt install -y lib32gcc1 lib32stdc++6 gnupg2 unzip curl iproute2 libgdiplus \
             && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
-            && apt update
+            && apt update \
             && apt install -y nodejs \
             && mkdir /node_modules \
             && npm install --prefix / ws \
