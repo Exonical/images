@@ -2,7 +2,7 @@
 
 var startupCmd = "";
 const fs = require("fs");
-fs.writeFile("latest.log", "");
+fs.writeFile("latest.log", "", (error) => { /* handle error */ });
 
 var args = process.argv.splice(process.execArgv.length + 2);
 for (var i = 0; i < args.length; i++) {
