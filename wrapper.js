@@ -2,7 +2,7 @@
 
 var startupCmd = "";
 const fs = require("fs");
-fs.writeFile("latest.log", "", (error) => { /* handle error */ });
+fs.writeFile("latest.log", "", (error) => { console.log("Unknown error!"); });
 
 var args = process.argv.splice(process.execArgv.length + 2);
 for (var i = 0; i < args.length; i++) {
