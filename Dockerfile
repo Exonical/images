@@ -5,7 +5,7 @@ LABEL       author="Isaac A." maintainer="isaac@isaacs.site"
 RUN         apt update \
             && apt upgrade -y \
             && apt install -y lib32gcc1 lib32stdc++6 gnupg2 unzip curl iproute2 libgdiplus \
-            && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
+            && curl -sL https://deb.nodesource.com/setup_8.x | -E bash - \
             && apt install -y nodejs \
             && mkdir /node_modules \
             && cd /src; npm install --prefix / ws \
