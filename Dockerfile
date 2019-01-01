@@ -7,7 +7,7 @@ FROM        frolvlad/alpine-glibc
 
 LABEL       maintainer="brycema@protonmail.com"
 
-RUN         apk add --update --no-cache curl ca-certificates openssl libstdc++ busybox-extras binutils \
+RUN         apk add --update --no-cache libc++ curl ca-certificates openssl libstdc++ busybox-extras binutils \
             && apk add libc++ jq --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing
 
 RUN         apk add \
