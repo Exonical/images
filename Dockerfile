@@ -5,7 +5,18 @@
 # ----------------------------------
 FROM        alpine:latest
 
-LABEL       author="Pterodactyl Software" maintainer="support@pterodactyl.io"
+LABEL       maintainer="brycema@protonmail.com"
+
+RUN         apk update
+RUN         apk add \
+            icu-dev \
+            curl \
+            openssl-dev \
+            libunwind \
+            libstdc++ \
+            g++ \
+            libc6-compat \
+            strace
 
 RUN         adduser -D -h /home/container container
 
