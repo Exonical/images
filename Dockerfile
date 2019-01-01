@@ -7,20 +7,19 @@ FROM        frolvlad/alpine-glibc
 
 LABEL       maintainer="brycema@protonmail.com"
 
-RUN         apk add --update --no-cache libc++ curl ca-certificates openssl libstdc++ busybox-extras binutils \
-            && apk add libc++ jq --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing
+RUN         apk add --update --no-cache curl ca-certificates openssl libstdc++ busybox-extras binutils \
+            && apk add libc++ jq --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+            && adduser -D -h /home/container container
 
 RUN         apk add \
-            icu-dev \
-            curl \
-            openssl-dev \
-            libunwind \
-            libstdc++ \
-            g++ \
-            libc6-compat \
-            strace
-
-RUN         adduser -D -h /home/container container
+            && icu-dev \
+            && curl \
+            && openssl-dev \
+            && libunwind \
+            && libstdc++ \
+            && g++ \
+            && libc6-compat \
+            && strace
 
 USER        container
 ENV         USER=container HOME=/home/container
