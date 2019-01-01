@@ -3,11 +3,13 @@
 # Environment: glibc
 # Minimum Panel Version: 0.7.0
 # ----------------------------------
-FROM        alpine:latest
+FROM        frolvlad/alpine-glibc
 
 LABEL       maintainer="brycema@protonmail.com"
 
-RUN         apk update
+RUN         apk add --update --no-cache curl ca-certificates openssl libstdc++ busybox-extras binutils \
+            && apk add libc++ jq --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+            && adduser -D -h /home/container container
 RUN         apk add \
             icu-dev \
             curl \
